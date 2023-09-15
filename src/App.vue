@@ -23,14 +23,29 @@ export default {
           },
         })
         .then((response) => {
-          this.movies = response.data.results;
+          this.movies = response.data.results.map((movie) => {
+            const {
+              id,
+              title,
+              original_title,
+              original_language,
+              vote_average,
+            } = movie;
+            return {
+              id,
+              title,
+              original_title,
+              language: original_language,
+              vote: vote_average,
+            };
+          });
           console.log(this.movies);
         });
     },
   },
 
   created() {
-    this.fetchMovies();
+    // this.fetchMovies();
   },
 };
 </script>
@@ -39,9 +54,9 @@ export default {
   <AppHeader @search-movies="fetchMovies" />
   <AppMain />
   <ul>
-    <li v-for="movie in movies">
-      {{ movie.title }} / {{ movie.original_title }} /
-      {{ movie.original_language }} / {{ movie.vote_average }} /
+    <li v-for="movie in movies" :key="id">
+      {{ movie.title }} / {{ movie.original_title }} / {{ movie.language }} /
+      {{ movie.vote }} /
     </li>
   </ul>
 </template>
