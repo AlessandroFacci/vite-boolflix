@@ -38,6 +38,12 @@ export default {
 <template>
   <AppHeader @search-movies="fetchMovies" />
   <AppMain />
+  <ul>
+    <li v-for="movie in movies">
+      {{ movie.title }} / {{ movie.original_title }} /
+      {{ movie.original_language }} / {{ movie.vote_average }} /
+    </li>
+  </ul>
 </template>
 
 <style lang="scss">
