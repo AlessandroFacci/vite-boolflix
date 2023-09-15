@@ -1,4 +1,5 @@
 <script>
+import { store } from "./store";
 import axios from "axios";
 
 import AppHeader from "./components/AppHeader.vue";
@@ -7,7 +8,7 @@ import AppMain from "./components/AppMain.vue";
 export default {
   data() {
     return {
-      movies: [],
+      store,
     };
   },
 
@@ -23,7 +24,7 @@ export default {
           },
         })
         .then((response) => {
-          this.movies = response.data.results.map((movie) => {
+          store.movies = response.data.results.map((movie) => {
             const {
               id,
               title,
@@ -44,21 +45,21 @@ export default {
     },
   },
 
-  created() {
-    // this.fetchMovies();
-  },
+  // created() {
+  //   this.fetchMovies();
+  // },
 };
 </script>
 
 <template>
   <AppHeader @search-movies="fetchMovies" />
   <AppMain />
-  <ul>
-    <li v-for="movie in movies" :key="id">
+  <!-- <ul>
+    <li v-for="movie in store.movies" :key="id">
       {{ movie.title }} / {{ movie.original_title }} / {{ movie.language }} /
       {{ movie.vote }} /
     </li>
-  </ul>
+  </ul> -->
 </template>
 
 <style lang="scss">
