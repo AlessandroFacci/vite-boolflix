@@ -14,16 +14,15 @@ export default {
   components: { AppHeader, AppMain },
 
   methods: {
-    fetchMovies() {
+    fetchMovies(word) {
       axios
-        .get("https://api.themoviedb.org/3/search/tv", {
+        .get("https://api.themoviedb.org/3/search/movie", {
           params: {
-            query: "anelli",
+            query: word,
             api_key: "02bab489fc90a269b3344630a53a52ed",
           },
         })
         .then((response) => {
-          console.log(response.data.results);
           this.movies = response.data.results;
           console.log(this.movies);
         });
@@ -37,7 +36,7 @@ export default {
 </script>
 
 <template>
-  <AppHeader />
+  <AppHeader @search-movies="fetchMovies" />
   <AppMain />
 </template>
 

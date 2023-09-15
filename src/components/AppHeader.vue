@@ -1,8 +1,12 @@
 <script>
 export default {
   data() {
-    return {};
+    return {
+      word: "",
+    };
   },
+
+  emit: ["search-movies"],
 };
 </script>
 
@@ -10,8 +14,13 @@ export default {
   <nav class="navbar bg-light">
     <div class="container-fluid">
       <a class="navbar-brand">Boolflix</a>
-      <form class="d-flex" role="search">
+      <form
+        @submit.prevent="$emit('search-movies', word)"
+        class="d-flex"
+        role="search"
+      >
         <input
+          v-model="word"
           class="form-control me-2"
           type="search"
           placeholder="Search"
