@@ -3,13 +3,19 @@ export default {
   data() {
     return {};
   },
-  props: { cardInfo: Object },
+  props: {
+    cardInfoMovie: Object,
+  },
 };
 </script>
 
 <template>
-  {{ cardInfo.title }} / {{ cardInfo.original_title }} /
-  {{ cardInfo.language }} / {{ cardInfo.vote }} /
+  <div>
+    {{ cardInfoMovie.title }} <br />
+    {{ cardInfoMovie.original_title }} <br />
+    {{ cardInfoMovie.language }} <br />
+    {{ cardInfoMovie.vote }} <br />
+  </div>
 </template>
 
 <style lang="scss" scoped></style>
