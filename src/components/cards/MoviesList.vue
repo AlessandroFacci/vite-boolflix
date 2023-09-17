@@ -13,13 +13,7 @@ export default {
 </script>
 
 <template>
-  <AppCard />
-  <ul>
-    <li v-for="movie in store.movies" :key="id">
-      {{ movie.title }} / {{ movie.original_title }} / {{ movie.language }} /
-      {{ movie.vote }} /
-    </li>
-  </ul>
+  <AppCard v-for="movie in store.movies" :key="id" :cardInfo="movie" />
 </template>
 
 <style lang="scss" scoped></style>
