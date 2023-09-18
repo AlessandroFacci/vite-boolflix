@@ -1,7 +1,6 @@
 <script>
 import { store } from "../../store";
 import AppCard from "./AppCard.vue";
-import AppCard2 from "./AppCard2.vue";
 
 export default {
   data() {
@@ -9,13 +8,15 @@ export default {
       store,
     };
   },
-  components: { AppCard, AppCard2 },
+  components: { AppCard },
 };
 </script>
 
 <template>
-  <AppCard v-for="movie in store.movies" :key="id" :cardInfoMovie="movie" />
-  <AppCard2 v-for="serie in store.series" :key="id" :cardInfoSerie="serie" />
+  <h2>Film</h2>
+  <AppCard v-for="media in store.movies" :key="media.id" :cardInfo="media" />
+  <h2>Serie TV</h2>
+  <AppCard v-for="media in store.series" :key="media.id" :cardInfo="media" />
 </template>
 
 <style lang="scss" scoped></style>

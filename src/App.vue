@@ -39,7 +39,7 @@ export default {
               original_title,
               language: original_language,
               vote: Math.ceil(vote_average / 2),
-              poster: "https://image.tmdb.org/t/p/w300" + poster_path,
+              poster: "https://image.tmdb.org/t/p/w342" + poster_path,
             };
           });
         });
@@ -62,11 +62,11 @@ export default {
             } = serie;
             return {
               id,
-              name,
-              original_name,
+              title: name,
+              original_title: original_name,
               language: original_language,
               vote: Math.ceil(vote_average / 2),
-              poster: "https://image.tmdb.org/t/p/w300" + poster_path,
+              poster: "https://image.tmdb.org/t/p/w342" + poster_path,
             };
           });
         });
