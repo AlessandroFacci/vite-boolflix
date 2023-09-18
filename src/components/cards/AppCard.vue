@@ -6,6 +6,21 @@ export default {
   props: {
     cardInfo: Object,
   },
+
+  computed: {
+    hasFlag() {
+      const flags = ["it", "en"];
+      return flags.iclused(this.cardInfo.language);
+    },
+
+    srcFlag() {
+      const flagUrl = new URL(
+        `../../assets/img/${this.cardInfo.language}.png`,
+        import.meta.url
+      );
+      return flagUrl.href;
+    },
+  },
 };
 </script>
 
@@ -18,7 +33,9 @@ export default {
       <div class="card-body">
         <h6 class="card-title">{{ cardInfo.title }}</h6>
         <h6 class="card-title">{{ cardInfo.original_title }}</h6>
-        <p class="card-text">{{ cardInfo.language }}</p>
+        <p class="card-text">
+          <img :src="srcFlag" :alt="cardInfo.title" />
+        </p>
         <p class="card-text">
           <span v-for="i in cardInfo.vote" class="star">
             <font-awesome-icon icon="fa-solid fa-star" />
@@ -54,6 +71,10 @@ export default {
   background-color: rgba(0, 0, 0, 1);
   display: none;
   overflow-x: hidden;
+
+  img {
+    width: 3rem;
+  }
 
   .star {
     color: goldenrod;
