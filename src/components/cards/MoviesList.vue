@@ -30,7 +30,7 @@ export default {
 
 <style lang="scss" scoped>
 .container-fluid {
-  width: 1200px;
+  width: 1800px;
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;

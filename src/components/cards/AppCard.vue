@@ -32,7 +32,12 @@ export default {
     <div class="card card-content" style="width: 18rem">
       <div class="card-body">
         <h6 class="card-title">{{ cardInfo.title }}</h6>
-        <h6 class="card-title">{{ cardInfo.original_title }}</h6>
+        <h6
+          class="card-title"
+          v-if="cardInfo.title == cardInfo.original_title ? '' : ''"
+        >
+          {{ cardInfo.original_title }}
+        </h6>
         <p class="card-text">
           <img :src="srcFlag" :alt="cardInfo.title" />
         </p>
