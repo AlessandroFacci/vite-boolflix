@@ -76,7 +76,7 @@ export default {
 </script>
 
 <template>
-  <AppHeader @search-movies="fetchMedia" />
+  <AppHeader @search-media="fetchMedia" />
   <AppMain />
 </template>
 

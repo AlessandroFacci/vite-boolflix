@@ -15,7 +15,7 @@ export default {
     <div class="container-fluid">
       <a class="navbar-brand">Boolflix</a>
       <form
-        @submit.prevent="$emit('search-movies', word)"
+        @submit.prevent="$emit('search-media', word)"
         class="d-flex"
         role="search"
       >
