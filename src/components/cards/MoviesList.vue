@@ -14,8 +14,8 @@ export default {
 </script>
 
 <template>
-  <AppCard v-for="movie in store.movies" :cardInfoMovie="movie" />
-  <AppCard2 v-for="serie in store.series" :cardInfoSerie="serie" />
+  <AppCard v-for="movie in store.movies" :key="id" :cardInfoMovie="movie" />
+  <AppCard2 v-for="serie in store.series" :key="id" :cardInfoSerie="serie" />
 </template>
 
 <style lang="scss" scoped></style>

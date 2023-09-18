@@ -15,7 +15,7 @@ export default {
   components: { AppHeader, AppMain },
 
   methods: {
-    fetchMovies(word) {
+    fetchMedia(word) {
       axios
         .get("https://api.themoviedb.org/3/search/movie", {
           params: {
@@ -72,46 +72,12 @@ export default {
         });
     },
   },
-
-  // fetchSeries(word) {
-  //   axios
-  //     .get("https://api.themoviedb.org/3/search/tv", {
-  //       params: {
-  //         query: word,
-  //         api_key: "02bab489fc90a269b3344630a53a52ed",
-  //       },
-  //     })
-  //     .then((response) => {
-  //       store.series = response.data.results.map((serie) => {
-  //         const { id, name, original_name, original_language, vote_average } =
-  //           serie;
-  //         return {
-  //           id,
-  //           name,
-  //           original_name,
-  //           language: original_language,
-  //           vote: vote_average,
-  //         };
-  //       });
-  //       console.log(this.series);
-  //     });
-  // },
 };
-
-// created() {
-//   this.fetchSeries();
-// },
 </script>
 
 <template>
-  <AppHeader @search-movies="fetchMovies" />
+  <AppHeader @search-movies="fetchMedia" />
   <AppMain />
-  <!-- <ul>
-    <li v-for="serie in store.series" :key="id">
-      {{ serie.name }} / {{ serie.original_name }} / {{ serie.language }} /
-      {{ serie.vote }} /
-    </li>
-  </ul> -->
 </template>
 
 <style lang="scss">
