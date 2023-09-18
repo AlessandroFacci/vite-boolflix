@@ -15,6 +15,7 @@ export default {
     {{ cardInfoSerie.original_name }} <br />
     {{ cardInfoSerie.language }} <br />
     {{ cardInfoSerie.vote }}
+    <img :src="cardInfoSerie.poster" alt="img" />
   </div>
 </template>
 

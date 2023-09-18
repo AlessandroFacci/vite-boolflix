@@ -31,6 +31,7 @@ export default {
               original_title,
               original_language,
               vote_average,
+              poster_path,
             } = movie;
             return {
               id,
@@ -38,6 +39,7 @@ export default {
               original_title,
               language: original_language,
               vote: vote_average,
+              poster: "https://image.tmdb.org/t/p/w300" + poster_path,
             };
           });
         });
@@ -50,14 +52,21 @@ export default {
         })
         .then((response) => {
           store.series = response.data.results.map((serie) => {
-            const { id, name, original_name, original_language, vote_average } =
-              serie;
+            const {
+              id,
+              name,
+              original_name,
+              original_language,
+              vote_average,
+              poster_path,
+            } = serie;
             return {
               id,
               name,
               original_name,
               language: original_language,
               vote: vote_average,
+              poster: "https://image.tmdb.org/t/p/w300" + poster_path,
             };
           });
         });
