@@ -16,6 +16,12 @@ export default {
     {{ cardInfoSerie.language }} <br />
     {{ cardInfoSerie.vote }}
     <img :src="cardInfoSerie.poster" alt="img" />
+    <span v-for="i in cardInfoSerie.vote">
+      <font-awesome-icon icon="fa-solid fa-star" />
+    </span>
+    <span v-for="i in 5 - cardInfoSerie.vote">
+      <font-awesome-icon icon="fa-regular fa-star" />
+    </span>
   </div>
 </template>
 

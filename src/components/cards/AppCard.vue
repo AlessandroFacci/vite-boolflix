@@ -16,8 +16,12 @@ export default {
     {{ cardInfoMovie.language }} <br />
     {{ cardInfoMovie.vote }} <br />
     <img :src="cardInfoMovie.poster" alt="img" />
-    <font-awesome-icon icon="fa-solid fa-star" />
-    <font-awesome-icon icon="fa-regular fa-star" />
+    <span v-for="i in cardInfoMovie.vote">
+      <font-awesome-icon icon="fa-solid fa-star" />
+    </span>
+    <span v-for="i in 5 - cardInfoMovie.vote">
+      <font-awesome-icon icon="fa-regular fa-star" />
+    </span>
   </div>
 </template>
 

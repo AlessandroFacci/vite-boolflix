@@ -38,7 +38,7 @@ export default {
               title,
               original_title,
               language: original_language,
-              vote: vote_average,
+              vote: Math.ceil(vote_average / 2),
               poster: "https://image.tmdb.org/t/p/w300" + poster_path,
             };
           });
@@ -65,7 +65,7 @@ export default {
               name,
               original_name,
               language: original_language,
-              vote: vote_average,
+              vote: Math.ceil(vote_average / 2),
               poster: "https://image.tmdb.org/t/p/w300" + poster_path,
             };
           });
