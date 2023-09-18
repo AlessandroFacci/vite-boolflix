@@ -13,10 +13,32 @@ export default {
 </script>
 
 <template>
-  <h2>Film</h2>
-  <AppCard v-for="media in store.movies" :key="media.id" :cardInfo="media" />
-  <h2>Serie TV</h2>
-  <AppCard v-for="media in store.series" :key="media.id" :cardInfo="media" />
+  <div class="container-fluid">
+    <h4>Film</h4>
+  </div>
+  <div class="container-fluid">
+    <AppCard v-for="media in store.movies" :key="media.id" :cardInfo="media" />
+  </div>
+
+  <div class="container-fluid">
+    <h4>Serie TV</h4>
+  </div>
+  <div class="container-fluid">
+    <AppCard v-for="media in store.series" :key="media.id" :cardInfo="media" />
+  </div>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.container-fluid {
+  width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+
+  h4 {
+    margin: 1.5rem 0;
+    color: white;
+  }
+}
+</style>
