@@ -27,6 +27,7 @@ export default {
             <font-awesome-icon icon="fa-regular fa-star" />
           </span>
         </p>
+        <p class="card-text">{{ cardInfo.overview }}</p>
       </div>
     </div>
   </div>
@@ -48,10 +49,11 @@ export default {
 }
 .card-content {
   width: 342px;
-  min-height: 429px;
+  height: 429px;
   color: white;
   background-color: rgba(0, 0, 0, 1);
   display: none;
+  overflow-x: hidden;
 
   .star {
     color: goldenrod;

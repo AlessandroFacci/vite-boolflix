@@ -32,6 +32,7 @@ export default {
               original_language,
               vote_average,
               poster_path,
+              overview,
             } = movie;
             return {
               id,
@@ -40,6 +41,7 @@ export default {
               language: original_language,
               vote: Math.ceil(vote_average / 2),
               poster: "https://image.tmdb.org/t/p/w342" + poster_path,
+              overview,
             };
           });
         });
@@ -59,6 +61,7 @@ export default {
               original_language,
               vote_average,
               poster_path,
+              overview,
             } = serie;
             return {
               id,
@@ -67,6 +70,7 @@ export default {
               language: original_language,
               vote: Math.ceil(vote_average / 2),
               poster: "https://image.tmdb.org/t/p/w342" + poster_path,
+              overview,
             };
           });
         });
